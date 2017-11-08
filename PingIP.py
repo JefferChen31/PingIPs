@@ -9,10 +9,9 @@ import time,datetime
 def PingCmd():
     cmdStr = ''
     if platform.system()=='Linux':
-        cmdStr = 'ping -c 1 %s'
+        cmdStr = 'ping -c 1 %s > /dev/null'
     else:
-        cmdStr =  'ping -n 1 %s'
-    cmdStr += '>nul'
+        cmdStr =  'ping -n 1 %s > nul'
     return cmdStr
 
 def IPV4SegList(aList):
